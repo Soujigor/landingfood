@@ -1,8 +1,12 @@
 import React from 'react'
+import { Flex } from '@chakra-ui/react'
 
 const Info = () => {
   return (
-    <div>Info</div>
+    <Flex backgroundColor="blue">
+        b
+        
+    </Flex>
   )
 }
 
