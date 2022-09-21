@@ -13,6 +13,104 @@ import {
   Grid,
 } from "@chakra-ui/react";
 
+const formList = [
+  {
+    label: "Nome Completo",
+  },
+  {
+    label: "Whatsapp",
+  },
+  {
+    label: "Endereço Completo",
+  },
+  {
+    label: "Conte-me sobre sua rotina",
+  },
+  {
+    label: "Proteínas Preferidas",
+  },
+  {
+    label: "Legumes que não podem faltar",
+  },
+  {
+    label: "O que você não come de jeito nenhum",
+  },
+  {
+    label: "O prato que não pode faltar",
+  },
+];
+
+const radioList = [
+  {
+    label: "Como pretende armazenar?",
+    value: [
+      {
+        number: 1,
+        text: "Porções separadas já montadas para a sua refeição",
+      },
+      {
+        number: 2,
+        text: "Porções livres, alimentos cozidos e guardados separadamente",
+      },
+    ],
+  },
+  {
+    label: "Para armazenamento da comida, você prefere:",
+    value: [
+      {
+        number: 1,
+        text: "Utilizar os próprios recipientes",
+      },
+      {
+        number: 2,
+        text: "Embalagens levadas por mim (contém custo adicional)",
+      },
+    ],
+  },
+  {
+    label: "Quantos dias de consumação dos alimentos produzidos?",
+    value: [
+      {
+        number: 1,
+        text: "7 dias",
+      },
+      {
+        number: 2,
+        text: "10 dias",
+      },
+      {
+        number: 3,
+        text: "15 dias",
+      },
+      {
+        number: 4,
+        text: "20 dias",
+      },
+    ],
+  },
+  {
+    label: "Quantas pessoas irão comer dos alimentos produzidos?",
+    value: [
+      {
+        number: 1,
+        text: "1 pessoa",
+      },
+      {
+        number: 2,
+        text: "2 pessoas",
+      },
+      {
+        number: 3,
+        text: "3 pessoas",
+      },
+      {
+        number: 4,
+        text: "4 pessoas",
+      },
+    ],
+  },
+];
+
 const Form = () => {
   return (
     <Flex
@@ -20,86 +118,61 @@ const Form = () => {
       justifyContent="center"
       alignContent="center"
     >
-      <Grid padding="20px" flexDirection={["column", "column", "row", "row"]} templateColumns="repeat(4, 1fr)" gap="50px">
-        <FormControl isRequired>
-          <FormLabel>Nome Completo</FormLabel>
-          <Textarea resize="none" />
-        </FormControl>
-        <FormControl isRequired>
-          <NumberInput>
-            <FormLabel>Whatsapp</FormLabel>
-            <NumberInputField />
-          </NumberInput>
-        </FormControl>
-        <FormControl isRequired>
-          <FormLabel>Endereço Completo</FormLabel>
-          <Textarea resize="none" />
-        </FormControl>
-        <FormControl isRequired>
-          <FormLabel>Conte-me sobre sua rotina</FormLabel>
-          <Textarea resize="none" />
-        </FormControl>
-        <FormControl isRequired>
-          <FormLabel>Proteínas Preferidas</FormLabel>
-          <Textarea resize="none" />
-        </FormControl>
-        <FormControl isRequired>
-          <FormLabel>Legumes que não podem faltar</FormLabel>
-          <Textarea resize="none" />
-        </FormControl>
-        <FormControl isRequired>
-          <FormLabel>O que você não come de jeito nenhum</FormLabel>
-          <Textarea resize="none" />
-        </FormControl>
-        <FormControl isRequired>
-          <FormLabel>O prato que não pode faltar</FormLabel>
-          <Textarea resize="none" />
-        </FormControl>
+      <Flex flexDirection="column" width="50%">
+        {formList.map((formItem) => {
+          return (
+            <FormControl isRequired key={formItem.label}>
+              <FormLabel>{formItem.label}</FormLabel>
+              <Textarea resize="none" />
+            </FormControl>
+          );
+        })}
+      </Flex>
 
-        <FormControl isRequired>
-          <FormLabel>Como pretende armazenar?</FormLabel>
-          <RadioGroup defaultValue="">
-            <Stack spacing={5} direction={["column", "column", "row", "row"]}>
-              <Radio value="1">
-                Porções separadas já montadas para a sua refeição
-              </Radio>
-              <Radio value="2">
-                Porções livres, alimentos cozidos e guardados separadamente
-              </Radio>
-            </Stack>
-          </RadioGroup>
-        </FormControl>
-
-        <FormControl isRequired>
-          <FormLabel>Para armazenamento da comida, você prefere:</FormLabel>
-          <RadioGroup defaultValue="">
-            <Stack spacing={5} direction={["column", "column", "row", "row"]}>
-              <Radio value="1">Utilizar os próprios recipientes</Radio>
-              <Radio value="2">
-                Embalagens levadas por mim (contém custo adicional)
-              </Radio>
-            </Stack>
-          </RadioGroup>
-        </FormControl>
-
+      {/* <Flex>
+        {radioList.map((radioItem) => {
+          return (
+            <FormControl isRequired key={radioItem.label}>
+              <FormLabel>{radioItem.label}</FormLabel>
+              <RadioGroup defaultValue="">
+                <Stack
+                  spacing={5}
+                  direction={["column", "column", "row", "row"]}
+                >
+                  {radioItem.value.map((valueItem, index) => {
+                    return (
+                      <Radio key={index} value={valueItem.number}>
+                        {valueItem.text}
+                      </Radio>
+                    );
+                  })}
+                </Stack>
+              </RadioGroup>
+            </FormControl>
+          );
+        })}
+      </Flex> */}
+      {/* <Flex>
         <FormControl isRequired>
           <FormLabel>
-            Quantos dias de consumação dos alimentos produzidos?
+            Qual é o melhor dia para agendarmos a ida na sua casa?
           </FormLabel>
+          <Input placeholder="Select Date and Time" size="md" type="date" />
+        </FormControl>
+        <FormControl isRequired>
+          <FormLabel>
+            Ah, para a minha organização preciso saber... Você tem pelo menos
+            duas panelas grandes?
+          </FormLabel>
+
           <RadioGroup defaultValue="">
             <Stack spacing={5} direction={["column", "column", "row", "row"]}>
-              <Radio value="1">7 dias</Radio>
-              <Radio value="2">10 dias</Radio>
-              <Radio value="3">15 dias</Radio>
-              <Radio value="4">20 dias</Radio>
-              <Radio value="5">
-                Outro
-              </Radio>
-                <Textarea />
+              <Radio value="1">Sim</Radio>
+              <Radio value="2">Não</Radio>
             </Stack>
           </RadioGroup>
         </FormControl>
-      </Grid>
+      </Flex> */}
     </Flex>
   );
 };
