@@ -13,15 +13,15 @@ const Main = () => {
       alignItems="center"
       paddingTop="30px"
     >
-      <Flex >
+      <Flex>
         <Stack direction={["column", "column", "row", "row"]} gap="5">
+          <Box>
+            <Image src={Foto} alt="foto" />
+          </Box>
           <Box>
             <Heading>Going to the party have a real good time</Heading>
             <Text>Where the Fuck Are You?</Text>
           </Box>
-        <Box>
-          <Image src={Foto} alt="foto" />
-        </Box>
         </Stack>
       </Flex>
     </Flex>

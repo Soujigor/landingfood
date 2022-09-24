@@ -1,6 +1,6 @@
 import { Flex } from "@chakra-ui/react";
 import React from "react";
-import Caveira from "../images/caveira.png";
+import Logo from "../images/malilogo.png";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -31,7 +31,7 @@ const Navbar = () => {
         cursor="pointer"
       >
         <Link href="/">
-          <Image src={Caveira} alt="logo" />
+          <Image src={Logo} alt="logo" />
         </Link>
       </Flex>
       <Flex
