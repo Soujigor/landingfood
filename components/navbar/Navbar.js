@@ -10,13 +10,10 @@ const Navbar = () => {
       backgroundColor="red"
       justifyContent="space-around"
       alignItems="center"
+      position="sticky"
+      top="0"
+      zIndex="2"
     >
-      <Flex
-        backgroundColor="red.100"
-        display={["none", "none", "flex", "flex"]}
-      >
-        No Role Models
-      </Flex>
       <Flex
         backgroundColor="red.200"
         display={["none", "none", "flex", "flex"]}
@@ -36,12 +33,6 @@ const Navbar = () => {
       </Flex>
       <Flex
         backgroundColor="red.400"
-        display={["none", "none", "flex", "flex"]}
-      >
-        No Role Models
-      </Flex>
-      <Flex
-        backgroundColor="red.300"
         display={["none", "none", "flex", "flex"]}
       >
         No Role Models
